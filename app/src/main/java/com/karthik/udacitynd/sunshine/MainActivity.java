@@ -31,67 +31,36 @@ public class MainActivity extends AppCompatActivity {
 
         Button appListButton[] = new Button[6];
         appListButton[0] = (Button)findViewById(R.id.spotify_app_id);
-        appListButton[0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),
-                        "This button will launch spotify app",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+        createToast(appListButton[0]);
 
         appListButton[1] = (Button)findViewById(R.id.football_scores_app_button);
-        appListButton[1].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),
-                        "This button will launch football scores app",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+        createToast(appListButton[1]);
 
         appListButton[2] = (Button)findViewById(R.id.library_app_button);
-        appListButton[2].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),
-                        "This button will launch library app",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+        createToast(appListButton[2]);
 
         appListButton[3] = (Button)findViewById(R.id.build_bigger_app_button);
-        appListButton[3].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),
-                        "This button will launch build it bigger app",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+        createToast(appListButton[3]);
 
         appListButton[4] = (Button)findViewById(R.id.xyz_reader_app_button);
-        appListButton[4].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),
-                        "This button will launch xyz reader app",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+        createToast(appListButton[4]);
 
         appListButton[5] = (Button)findViewById(R.id.capstone_app_button);
-        appListButton[5].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),
-                        "This button will launch my final project app",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+        createToast(appListButton[5]);
 
     }
 
+    //Helper function for handle click event of each app button
+    private void createToast(final Button selectedButton){
+        selectedButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),
+                        selectedButton.getText()+" app will be launched",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
